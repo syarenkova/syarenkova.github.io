@@ -1,7 +1,7 @@
 class WelcomePopup {
     constructor() {
         if (!localStorage.getItem('welcomePopupClosed')) {
-            setTimeout(() => this.showPopup(), 3000);
+            setTimeout(() => this.showPopup(), 30000);
         }
     }
 

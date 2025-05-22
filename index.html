@@ -16,6 +16,7 @@
                 <li><a href="#home">home</a></li>
                 <li><a href="#about">about</a></li>
                 <li><a href="#work">work</a></li>
+                <li><a href="#countdown">countdown</a></li>
                 <li><a href="#contact">contact</a></li>
             </ul>
             <div class="header-social">
@@ -76,10 +77,10 @@
                 <h2 class="section-title">work.</h2>
                 <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet vulputate tristique quam felis. Id phasellus dui orci vulputate consequat nulla proin. Id sit scelerisque neque, proin bibendum diam.</p>
                 
-                <div class="case-studies">
-                    <div class="case-study">
+                <div class="case-studies gallery-grid">
+                    <div class="case-study gallery-item">
                         <div class="case-study-image">
-                            <img src="assets/case-study-1.png" alt="Case study illustration" width="600" height="400">
+                            <img src="assets/case-study-1.png" alt="Project 1" width="600" height="400">
                         </div>
                         <div class="case-study-header">
                             <time>November 24, 2024</time>
@@ -88,9 +89,9 @@
                         </div>
                     </div>
 
-                    <div class="case-study">
+                    <div class="case-study gallery-item">
                         <div class="case-study-image">
-                            <img src="assets/case-study-2.png" alt="Case study illustration" width="600" height="400">
+                            <img src="assets/case-study-2.png" alt="Project 2" width="600" height="400">
                         </div>
                         <div class="case-study-header">
                             <time>November 24, 2024</time>
@@ -98,36 +99,29 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed aliquam sollicitudin rhoncus morbi. Tincidunt quam sem elit ci convallis. Eget ipsum, velit vitae eu nunc, consequat, at.</p>
                         </div>
                     </div>
+
+                    <div class="case-study gallery-item">
+                        <div class="case-study-image">
+                            <img src="assets/contact.png" alt="Project 3" width="600" height="400">
+                        </div>
+                        <div class="case-study-header">
+                            <time>November 24, 2024</time>
+                            <h3>3rd project</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed aliquam sollicitudin rhoncus morbi. Tincidunt quam sem elit ci convallis. Eget ipsum, velit vitae eu nunc, consequat, at.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section id="contact" class="contact">
+        
+        <section id="countdown" class="countdown">
             <div class="container">
-                <h2 class="section-title">contact.</h2>
-                <p class="section-intro"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet vulputate tristique quam felis. Id phasellus dui orci vulputate consequat nulla proin. Id sit scelerisque neque, proin bibendum diam.</p>
-                <div class="contact-content">
-                    <div class="contact-image">
-                        <img src="assets/contact.png" alt="contact illustration">
-                    </div>
-                    <form class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">name</label>
-                                <input type="text" id="name" name="name" required pattern="[A-Za-zА-Яа-яЁё\s]{2,50}">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">message</label>
-                            <textarea id="message" name="message" required minlength="10"></textarea>
-                        </div>
-                        <button type="submit" class="btn">send message</button>
-                    </form>
+                <h2 class="section-title">countdown.</h2>
+                <p class="section-intro">До конца зачетной недели осталось:</p>
+                <div class="countdown-wrapper">
+                    <div class="countdown-display"></div>
                 </div>
+                <p class="section-intro">вот бы успеть защититься...</p>
             </div>
         </section>
     </main>
@@ -137,5 +131,25 @@
             <p>&copy; 2025 YarenkovaSA. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="js/fixed-header.js"></script>
+    <script src="js/countdown-timer.js"></script>
+    <script src="js/stars-animation.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/contact-popup.js"></script>
+    <script src="js/welcome-popup.js"></script>
+
+    <div class="gallery-popup">
+        <div class="popup-content">
+            <span class="gallery-close">&times;</span>
+            <div class="popup-navigation">
+                <button class="nav-btn prev-btn">&larr;</button>
+                <div class="popup-image-container">
+                    <img src="" alt="" class="popup-image">
+                </div>
+                <button class="nav-btn next-btn">&rarr;</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

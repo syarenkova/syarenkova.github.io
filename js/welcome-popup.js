@@ -1,7 +1,7 @@
 class WelcomePopup {
     constructor() {
         if (!this.getCookie('welcomePopupClosed')) {
-            setTimeout(() => this.showPopup(), 3000);
+            setTimeout(() => this.showPopup(), 10000);
         }
     }
 

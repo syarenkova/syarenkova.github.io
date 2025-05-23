@@ -1,7 +1,7 @@
 class WelcomePopup {
     constructor() {
         if (!this.getCookie('welcomePopupClosed')) {
-            setTimeout(() => this.showPopup(), 30000);
+            setTimeout(() => this.showPopup(), 3000);
         }
     }
 
@@ -45,12 +45,12 @@ class WelcomePopup {
     }
 
     getCookie(name) {
-        const name = name + "=";
+        const finding_name = name + "=";
         const cookies_array = document.cookie.split(';');
         for (let i = 0; i < cookies_array.length; i++) {
             let cookie = cookies_array[i];
             while (cookie.charAt(0) === ' ') cookie = cookie.substring(1);
-            if (cookie.indexOf(name) === 0) return cookie.substring(name.length);
+            if (cookie.indexOf(finding_name) === 0) return cookie.substring(name.length);
         }
         return null;
     }

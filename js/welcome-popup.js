@@ -1,20 +1,24 @@
 class WelcomePopup {
+    // пришлось убрать проверку, не был ли попап закрыт пользователем, потому что проверять работоспособность таким образом тяжко
+    // ну и не 30 секунд, а 10
     constructor() {
-        if (!localStorage.getItem('welcomePopupClosed')) {
+        setTimeout(() => this.showPopup(), 10000);
+
+        /*if (!localStorage.getItem('welcomePopupClosed')) {
             setTimeout(() => this.showPopup(), 30000);
-        }
+        }*/
     }
 
     showPopup() {
-        if (localStorage.getItem('welcomePopupClosed')) return;
+        //if (localStorage.getItem('welcomePopupClosed')) return;
 
         const popup = document.createElement('div');
         popup.className = 'welcome-popup';
         popup.innerHTML = `
             <div class="welcome-popup-content">
                 <button class="welcome-close">&times;</button>
-                <h2>Welcome to my portfolio!</h2>
-                <p>I want to present project in time so bad &#128546;</p>
+                <h2>welcome to my portfolio!</h2>
+                <p>i really really want to present the project on time. &#128546 hope you like it!</p>
             </div>
         `;
 
@@ -36,7 +40,7 @@ class WelcomePopup {
 
     closePopup(popup) {
         popup.remove();
-        localStorage.setItem('welcomePopupClosed', 'true');
+        // localStorage.setItem('welcomePopupClosed', 'true');
     }
 }
 

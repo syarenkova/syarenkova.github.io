@@ -1,17 +1,11 @@
 class WelcomePopup {
-    // пришлось убрать проверку, не был ли попап закрыт пользователем, потому что проверять работоспособность таким образом тяжко
-    // ну и не 30 секунд, а 10
     constructor() {
-        setTimeout(() => this.showPopup(), 10000);
-
-        /*if (!localStorage.getItem('welcomePopupClosed')) {
+        if (!this.getCookie('welcomePopupClosed')) {
             setTimeout(() => this.showPopup(), 30000);
-        }*/
+        }
     }
 
     showPopup() {
-        //if (localStorage.getItem('welcomePopupClosed')) return;
-
         const popup = document.createElement('div');
         popup.className = 'welcome-popup';
         popup.innerHTML = `
@@ -40,7 +34,25 @@ class WelcomePopup {
 
     closePopup(popup) {
         popup.remove();
-        // localStorage.setItem('welcomePopupClosed', 'true');
+        this.setCookie('welcomePopupClosed', 'true', 2);
+    }
+
+    setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    getCookie(name) {
+        const name = name + "=";
+        const cookies_array = document.cookie.split(';');
+        for (let i = 0; i < cookies_array.length; i++) {
+            let cookie = cookies_array[i];
+            while (cookie.charAt(0) === ' ') cookie = cookie.substring(1);
+            if (cookie.indexOf(name) === 0) return cookie.substring(name.length);
+        }
+        return null;
     }
 }
 
